@@ -718,9 +718,9 @@ static void ExportAnimations(const string& rootdir, const string& skelfile
 			Log::Verbose("ExportAnimation Reading '%s'", animfile.c_str());
 
 
-			Niflib::NifOptions options;
-			options.exceptionOnErrors = false;
-			vector<NiControllerSequenceRef> blocks = DynamicCast<NiControllerSequence>(Niflib::ReadNifList(animfile, NULL, &options));
+			//Niflib::NifOptions options;
+			//options.exceptionOnErrors = false;
+			vector<NiControllerSequenceRef> blocks = DynamicCast<NiControllerSequence>(Niflib::ReadNifList(animfile, NULL/*, &options*/));
 
 			int nbindings = blocks.size();
 			if ( nbindings == 0)

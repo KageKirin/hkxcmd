@@ -374,7 +374,7 @@ bool AnimationExport::exportController()
 
 			QuatKey qk;
 			qk.time = time;
-			qk.data = TOQUAT(transform.getRotation()).Normalized();
+			qk.data = TOQUAT(transform.getRotation());	//.Normalized();
 			if (!EQUALS(qk.data,data.lastRotate))
 			{
 				data.rot.push_back(qk);
