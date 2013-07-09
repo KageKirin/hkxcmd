@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="hkxcmd_VC90">
+</Property><Property Name="Solution File" Value="C:\Users\c.helmich\Documents\GitHub\hkxcmd\hkxcmd_VC90.sln">
+</Property><Property Name="User Options File" Value="C:\Users\c.helmich\Documents\GitHub\hkxcmd\hkxcmd_VC90.suo">
+</Property><Property Name="Date" Value="Friday, July 05, 2013">
+</Property><Property Name="Time" Value="11:50 AM">
+</Property><Property Name="Log Number" Value="3">
+</Property></Properties><Event ErrorLevel="2" Project="" Source="hkxcmd_VC90.sln" Description="Error creating backup file: C:\Users\c.helmich\Documents\GitHub\hkxcmd\hkxcmd_VC90.sln.old">
+</Event><Event ErrorLevel="0" Project="" Source="hkxcmd_VC90.suo" Description="File successfully backed up as C:\Users\c.helmich\Documents\GitHub\hkxcmd\hkxcmd_VC90.suo.old">
+</Event><Event ErrorLevel="3" Project="hkxcmd_VC90" Source="hkxcmd_VC90.vcxproj" Description="No Conversion Required">
+</Event><Event ErrorLevel="3" Project="niflib_VC2008" Source="..\niflib\niflib_VC2008.vcproj" Description="No Conversion Required">
+</Event></UpgradeLog>

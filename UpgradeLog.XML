@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="hkxcmd_VC90">
+</Property><Property Name="Solution File" Value="C:\Users\c.helmich\Documents\GitHub\hkxcmd\hkxcmd_VC90.sln">
+</Property><Property Name="Date" Value="Tuesday, July 02, 2013">
+</Property><Property Name="Time" Value="18:12 PM">
+</Property></Properties><Event ErrorLevel="0" Project="" Source="hkxcmd_VC90.sln" Description="File successfully backed up as C:\Users\c.helmich\Documents\GitHub\hkxcmd\hkxcmd_VC90.sln.old">
+</Event><Event ErrorLevel="0" Project="hkxcmd_VC90" Source="hkxcmd_VC90.vcproj" Description="Converting project file 'C:\Users\c.helmich\Documents\GitHub\hkxcmd\hkxcmd_VC90.vcproj'.">
+</Event><Event ErrorLevel="1" Project="hkxcmd_VC90" Source="hkxcmd_VC90.vcproj" Description="VCWebServiceProxyGeneratorTool is no longer supported. The tool has been removed from your project settings.">
+</Event><Event ErrorLevel="0" Project="hkxcmd_VC90" Source="hkxcmd_VC90.vcproj" Description="Done converting to new project file 'C:\Users\c.helmich\Documents\GitHub\hkxcmd\hkxcmd_VC90.vcxproj'.">
+</Event><Event ErrorLevel="3" Project="hkxcmd_VC90" Source="hkxcmd_VC90.vcproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="niflib_VC2008" Source="..\niflib\niflib_VC2008.vcproj" Description="Converting project file 'C:\Users\c.helmich\Documents\GitHub\niflib\niflib_VC2008.vcproj'.">
+</Event><Event ErrorLevel="2" Project="niflib_VC2008" Source="..\niflib\niflib_VC2008.vcproj" Description="File 'C:\Users\c.helmich\Documents\GitHub\niflib\niflib_VC2008.vcproj' was not found.">
+</Event><Event ErrorLevel="2" Project="niflib_VC2008" Source="..\niflib\niflib_VC2008.vcproj" Description="Project upgrade failed.">
+</Event><Event ErrorLevel="3" Project="niflib_VC2008" Source="..\niflib\niflib_VC2008.vcproj" Description="Not Converted">
+</Event><Event ErrorLevel="0" Project="" Source="hkxcmd_VC90.sln" Description="Solution converted successfully">
+</Event><Event ErrorLevel="3" Project="" Source="hkxcmd_VC90.sln" Description="Converted">
+</Event></UpgradeLog>

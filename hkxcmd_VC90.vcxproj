@@ -1,0 +1,1220 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectName>hkxcmd</ProjectName>
+    <ProjectGuid>{3976526D-2906-443B-B716-95E3915A7CBE}</ProjectGuid>
+    <RootNamespace>hkxcmd</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <WholeProgramOptimization>false</WholeProgramOptimization>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.40219.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)bin\$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)Temp\$(ProjectName)\$(Configuration)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)bin\$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)Temp\$(ProjectName)\$(Configuration)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IncludePath);C:\Havok\havok-2010\hk2010_2_0_r1\Source</IncludePath>
+    <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IncludePath);C:\Havok\AnarchySDK\Source</IncludePath>
+    <LibraryPath Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(LibraryPath);C:\Havok\havok-2010\hk2010_2_0_r1\Lib\win32_net_9-0\debug_multithreaded_dll</LibraryPath>
+    <LibraryPath Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(LibraryPath);C:\Havok\AnarchySDK\Lib\win32_vs2010_anarchy\dev_dll</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <PreBuildEvent>
+      <Command>makeconfig.bat</Command>
+    </PreBuildEvent>
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
+      <AdditionalIncludeDirectories>$(ProjectDir)Core;$(ProjectDir)Compat;$(ProjectDir)Loki/include;$(ProjectDir)..\vendor\Havok\hk2010_2_0_r1\Source;$(ProjectDir)..\niflib\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_WIN32_WINNT=0x500;_DEBUG;_CONSOLE;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_SCL_SECURE_NO_WARNINGS;USE_NIFLIB_TEMPLATE_HELPERS;NIFLIB_STATIC_LINK;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <FloatingPointExceptions>true</FloatingPointExceptions>
+      <ForceConformanceInForLoopScope>false</ForceConformanceInForLoopScope>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <UndefinePreprocessorDefinitions>_DLL;%(UndefinePreprocessorDefinitions)</UndefinePreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>$(ProjectDir)..\vendor\Havok\hk2010_2_0_r1\Lib\win32_net_9-0\debug_multithreaded;$(ProjectDir)..\niflib\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+    <PostBuildEvent>
+      <Command>echo $(TargetPath)</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(ProjectDir)Core;$(ProjectDir)Compat;$(ProjectDir)Loki/include;$(ProjectDir)..\vendor\Havok\hk2010_2_0_r1\Source;$(ProjectDir)..\niflib\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_WIN32_WINNT=0x500;NDEBUG;_CONSOLE;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_SCL_SECURE_NO_WARNINGS;USE_NIFLIB_TEMPLATE_HELPERS;NIFLIB_STATIC_LINK;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <ForceConformanceInForLoopScope>false</ForceConformanceInForLoopScope>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <CompileAs>Default</CompileAs>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>$(ProjectDir)..\vendor\Havok\hk2010_2_0_r1\Lib\win32_net_9-0\release_multithreaded;$(ProjectDir)..\niflib\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+    <PostBuildEvent>
+      <Command>echo $(TargetPath)</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="Core\hkclsnam.cpp" />
+    <ClCompile Include="Core\hkfutils.cpp" />
+    <ClCompile Include="Core\hkxcmd.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)%(Filename)1.xdc</XMLDocumentationFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)%(Filename)1.xdc</XMLDocumentationFileName>
+    </ClCompile>
+    <ClCompile Include="Core\hkxcore.cpp" />
+    <ClCompile Include="Core\hkxutils.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)%(Filename)1.xdc</XMLDocumentationFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)%(Filename)1.xdc</XMLDocumentationFileName>
+    </ClCompile>
+    <ClCompile Include="Core\log.cpp" />
+    <ClCompile Include="Core\nifcore.cpp" />
+    <ClCompile Include="Core\stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)%(Filename)1.xdc</XMLDocumentationFileName>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)%(Filename)1.xdc</XMLDocumentationFileName>
+    </ClCompile>
+    <ClCompile Include="Loki\src\Singleton.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Loki\src\SmallObj.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Addins\About.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)%(Filename)1.xdc</XMLDocumentationFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)%(Filename)1.xdc</XMLDocumentationFileName>
+    </ClCompile>
+    <ClCompile Include="Addins\Convert.cpp" />
+    <ClCompile Include="Addins\ConvertKF.cpp" />
+    <ClCompile Include="Addins\DumpList.cpp" />
+    <ClCompile Include="Addins\ExportKF.cpp" />
+    <ClCompile Include="Addins\Report.cpp" />
+    <ClCompile Include="zlib\adler32.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="zlib\compress.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="zlib\crc32.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="zlib\deflate.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="zlib\gzio.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="zlib\infback.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="zlib\inffast.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="zlib\inflate.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="zlib\inftrees.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="zlib\trees.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="zlib\uncompr.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="zlib\zutil.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\BGSGamebryoSequenceGenerator_2.cpp" />
+    <ClCompile Include="compat\BSBoneSwitchGenerator_1.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\BSBoneSwitchGeneratorBoneData_1.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\BSComputeAddBoneAnimModifier_1.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\BSCyclicBlendTransitionGenerator_1.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\BSDecomposeVectorModifier_0.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\BSDirectAtModifier_0.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\BSDistTriggerModifier_1.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\BSEventEveryNEventsModifier_1.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\BSEventOnDeactivateModifier_1.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\BSEventOnFalseToTrueModifier_1.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\BSGetTimeStepModifier_0.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\BSInterpValueModifier_0.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\BSIsActiveModifier_1.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\BSIStateManagerModifier_1.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\BSIStateManagerModifierBSiStateData_0.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\BSIStateManagerModifierBSIStateManagerStateListener_0.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\BSiStateTaggingGenerator_1.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\BSLimbIKModifier_0.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\BSLookAtModifier_4.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\BSLookAtModifierBoneData_0.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\BSModifyOnceModifier_1.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\BSOffsetAnimationGenerator_1.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\BSPassByTargetTriggerModifier_1.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\BSRagdollContactListenerModifier_0.cpp" />
+    <ClCompile Include="compat\BSSpeedSamplerModifier_1.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\BSSynchronizedClipGenerator_1.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\BSTimerModifier_0.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\BSTweenerModifier_1.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbAttachmentModifier_1.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbAttachmentSetup_1.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbAttributeModifier_0.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbAttributeModifierAssignment_0.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbAuxiliaryNodeInfo_1.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbBehaviorEventsInfo_1.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbBehaviorGraph_1.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbBehaviorGraphData_2.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbBehaviorGraphInternalState_0.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbBehaviorGraphInternalStateInfo_1.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbBehaviorGraphStringData_1.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbBehaviorInfo_1.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbBehaviorInfoIdToNamePair_0.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbBehaviorReferenceGenerator_0.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbBindable_0.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbBlendCurveUtils_0.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbBlenderGenerator_1.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbBlenderGeneratorChild_2.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbBlenderGeneratorChildInternalState_0.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbBlenderGeneratorInternalState_0.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbBlendingTransitionEffect_1.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbBlendingTransitionEffectInternalState_0.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbBoneIndexArray_0.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbBoneWeightArray_0.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbBoolVariableSequencedData_0.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbBoolVariableSequencedDataSample_0.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbCameraShakeEventPayload_0.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbCharacter_2.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbCharacterAddedInfo_0.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbCharacterControlCommand_1.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbCharacterControllerControlData_0.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbCharacterControllerModifier_0.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbCharacterControllerModifierInternalState_0.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbCharacterData_7.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbCharacterDataCharacterControllerInfo_0.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbCharacterInfo_2.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbCharacterSetup_2.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbCharacterSkinInfo_2.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbCharacterSteppedInfo_2.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbCharacterStringData_5.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbClientCharacterState_1.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbClipGenerator_2.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbClipGeneratorEcho_0.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbClipGeneratorInternalState_0.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbClipTrigger_1.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbClipTriggerArray_0.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbCombineTransformsModifier_0.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbCombineTransformsModifierInternalState_0.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbCompiledExpressionSet_1.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbCompiledExpressionSetToken_0.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbComputeDirectionModifier_0.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbComputeDirectionModifierInternalState_0.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbComputeRotationFromAxisAngleModifier_0.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbComputeRotationFromAxisAngleModifierInternalState_0.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbComputeRotationToTargetModifier_0.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbComputeRotationToTargetModifierInternalState_0.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbCondition_0.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbContext_1.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbDampingModifier_1.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbDampingModifierInternalState_0.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbDefaultMessageLog_0.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbDelayedModifier_0.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbDelayedModifierInternalState_0.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbDetectCloseToGroundModifier_2.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbDetectCloseToGroundModifierInternalState_0.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbEvaluateExpressionModifier_1.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbEvaluateExpressionModifierInternalExpressionData_0.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbEvaluateExpressionModifierInternalState_0.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbEvaluateHandleModifier_2.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbEvent_1.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbEventBase_0.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbEventDrivenModifier_0.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbEventDrivenModifierInternalState_0.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbEventInfo_0.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbEventPayload_0.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbEventPayloadList_0.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbEventProperty_1.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbEventRaisedInfo_2.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbEventRangeData_0.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbEventRangeDataArray_0.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbEventSequencedData_0.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbEventSequencedDataSequencedEvent_0.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbEventsFromRangeModifier_0.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbEventsFromRangeModifierInternalState_0.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbExpressionCondition_1.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbExpressionData_0.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbExpressionDataArray_0.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbExtractRagdollPoseModifier_1.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbFootIkControlData_0.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbFootIkControlsModifier_1.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbFootIkControlsModifierLeg_0.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbFootIkDriverInfo_0.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbFootIkDriverInfoLeg_0.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbFootIkGains_0.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbFootIkModifier_3.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbFootIkModifierInternalLegData_1.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbFootIkModifierLeg_2.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbGenerator_0.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbGeneratorOutputListener_0.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbGeneratorSyncInfo_0.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbGeneratorSyncInfoSyncPoint_0.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbGeneratorTransitionEffect_1.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbGeneratorTransitionEffectInternalState_0.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbGetHandleOnBoneModifier_0.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbGetUpModifier_2.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbGetUpModifierInternalState_0.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbGetWorldFromModelModifier_0.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbGetWorldFromModelModifierInternalState_0.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbHandIkControlData_2.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbHandIkControlsModifier_0.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbHandIkControlsModifierHand_0.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbHandIkDriverInfo_0.cpp" />
+    <ClCompile Include="compat\hkbHandIkDriverInfoHand_1.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbHandIkModifier_0.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbHandIkModifierHand_3.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbHandle_1.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbIntEventPayload_0.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbIntVariableSequencedData_0.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbIntVariableSequencedDataSample_0.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbKeyframeBonesModifier_3.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbKeyframeBonesModifierKeyframeInfo_0.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbLinkedSymbolInfo_0.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbLookAtModifier_3.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbLookAtModifierInternalState_0.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbManualSelectorGenerator_0.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbManualSelectorGeneratorInternalState_0.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbMessageLog_0.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbMirroredSkeletonInfo_0.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbMirrorModifier_0.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbModifier_0.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbModifierGenerator_0.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbModifierList_0.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbModifierWrapper_0.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbMoveCharacterModifier_0.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbMoveCharacterModifierInternalState_0.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbNamedEventPayload_0.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbNamedIntEventPayload_0.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbNamedRealEventPayload_0.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbNamedStringEventPayload_0.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbNode_1.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbNodeInternalStateInfo_0.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbParticleSystemEventPayload_0.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbPoseMatchingGenerator_2.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbPoseMatchingGeneratorInternalState_0.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbPoweredRagdollControlData_3.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbPoweredRagdollControlsModifier_5.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbProjectData_2.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbProjectStringData_1.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbProxyModifier_1.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbProxyModifierProxyInfo_0.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbRaiseEventCommand_0.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbRealEventPayload_0.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbRealVariableSequencedData_0.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbRealVariableSequencedDataSample_0.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbReferencePoseGenerator_0.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbRegisteredGenerator_1.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbRigidBodyRagdollControlData_1.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbRigidBodyRagdollControlsModifier_3.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbRoleAttribute_0.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbRotateCharacterModifier_1.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbRotateCharacterModifierInternalState_0.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbSenseHandleModifier_2.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbSenseHandleModifierRange_0.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbSequence_0.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbSequencedData_0.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbSequenceInternalState_0.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbSequenceStringData_0.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbSetBehaviorCommand_1.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbSetLocalTimeOfClipGeneratorCommand_0.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbSetNodePropertyCommand_1.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbSetWordVariableCommand_0.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbSetWorldFromModelModifier_0.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbSimulationControlCommand_0.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbSimulationStateInfo_0.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbStateChooser_0.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbStateListener_0.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbStateMachine_4.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbStateMachineActiveTransitionInfo_1.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbStateMachineDelayedTransitionInfo_1.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbStateMachineEventPropertyArray_0.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbStateMachineInternalState_0.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbStateMachineNestedStateMachineData_0.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbStateMachineProspectiveTransitionInfo_2.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbStateMachineStateInfo_4.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbStateMachineTimeInterval_0.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbStateMachineTransitionInfo_1.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbStateMachineTransitionInfoArray_0.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbStateMachineTransitionInfoReference_1.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbStringCondition_0.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbStringEventPayload_0.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbTestStateChooser_0.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbTimerModifier_1.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbTimerModifierInternalState_0.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbTransformVectorModifier_0.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbTransformVectorModifierInternalState_0.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbTransitionEffect_0.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbTwistModifier_1.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbVariableBindingSet_2.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbVariableBindingSetBinding_1.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbVariableInfo_1.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbVariableValue_0.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbVariableValueSet_0.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbWorldEnums_0.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="compat\hkbWorldFromModelModeData_0.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="hkxpch.h" />
+    <ClInclude Include="Core\Loki\include\loki\AssocVector.h" />
+    <ClInclude Include="Core\Loki\include\loki\EmptyType.h" />
+    <ClInclude Include="Core\Loki\include\loki\Functor.h" />
+    <ClInclude Include="Core\Loki\include\loki\Sequence.h" />
+    <ClInclude Include="Core\Loki\include\loki\Singleton.h" />
+    <ClInclude Include="Core\Loki\include\loki\SmallObj.h" />
+    <ClInclude Include="Core\Loki\include\loki\Threads.h" />
+    <ClInclude Include="Core\Loki\include\loki\Typelist.h" />
+    <ClInclude Include="Core\Loki\include\loki\TypelistMacros.h" />
+    <ClInclude Include="Core\Loki\include\loki\TypeTraits.h" />
+    <ClInclude Include="Core\bsa.h" />
+    <ClInclude Include="Core\config.h" />
+    <ClInclude Include="Core\hkfutils.h" />
+    <ClInclude Include="Core\hkxcmd.h" />
+    <ClInclude Include="Core\hkxcmdver.h" />
+    <ClInclude Include="Core\hkxcore.h" />
+    <ClInclude Include="Core\hkxpch.h" />
+    <ClInclude Include="Core\hkxutils.h" />
+    <ClInclude Include="Core\log.h" />
+    <ClInclude Include="Core\resource.h" />
+    <ClInclude Include="Core\stdafx.h" />
+    <ClInclude Include="zlib\crc32.h" />
+    <ClInclude Include="zlib\deflate.h" />
+    <ClInclude Include="zlib\inffast.h" />
+    <ClInclude Include="zlib\inffixed.h" />
+    <ClInclude Include="zlib\inflate.h" />
+    <ClInclude Include="zlib\inftrees.h" />
+    <ClInclude Include="zlib\trees.h" />
+    <ClInclude Include="zlib\zconf.h" />
+    <ClInclude Include="zlib\zlib.h" />
+    <ClInclude Include="zlib\zutil.h" />
+    <ClInclude Include="compat\hkxreg.h" />
+    <ClInclude Include="compat\BGSGamebryoSequenceGenerator_2.h" />
+    <ClInclude Include="compat\BSBoneSwitchGenerator_1.h" />
+    <ClInclude Include="compat\BSBoneSwitchGeneratorBoneData_1.h" />
+    <ClInclude Include="compat\BSComputeAddBoneAnimModifier_1.h" />
+    <ClInclude Include="compat\BSCyclicBlendTransitionGenerator_1.h" />
+    <ClInclude Include="compat\BSDecomposeVectorModifier_0.h" />
+    <ClInclude Include="compat\BSDirectAtModifier_0.h" />
+    <ClInclude Include="compat\BSDistTriggerModifier_1.h" />
+    <ClInclude Include="compat\BSEventEveryNEventsModifier_1.h" />
+    <ClInclude Include="compat\BSEventOnDeactivateModifier_1.h" />
+    <ClInclude Include="compat\BSEventOnFalseToTrueModifier_1.h" />
+    <ClInclude Include="compat\BSGetTimeStepModifier_0.h" />
+    <ClInclude Include="compat\BSInterpValueModifier_0.h" />
+    <ClInclude Include="compat\BSIsActiveModifier_1.h" />
+    <ClInclude Include="compat\BSIStateManagerModifier_1.h" />
+    <ClInclude Include="compat\BSIStateManagerModifierBSiStateData_0.h" />
+    <ClInclude Include="compat\BSIStateManagerModifierBSIStateManagerStateListener_0.h" />
+    <ClInclude Include="compat\BSiStateTaggingGenerator_1.h" />
+    <ClInclude Include="compat\BSLimbIKModifier_0.h" />
+    <ClInclude Include="compat\BSLookAtModifier_4.h" />
+    <ClInclude Include="compat\BSLookAtModifierBoneData_0.h" />
+    <ClInclude Include="compat\BSModifyOnceModifier_1.h" />
+    <ClInclude Include="compat\BSOffsetAnimationGenerator_1.h" />
+    <ClInclude Include="compat\BSPassByTargetTriggerModifier_1.h" />
+    <ClInclude Include="compat\BSRagdollContactListenerModifier_0.h" />
+    <ClInclude Include="compat\BSSpeedSamplerModifier_1.h" />
+    <ClInclude Include="compat\BSSynchronizedClipGenerator_1.h" />
+    <ClInclude Include="compat\BSTimerModifier_0.h" />
+    <ClInclude Include="compat\BSTweenerModifier_1.h" />
+    <ClInclude Include="compat\hkaKeyFrameHierarchyUtilityControlData_0.h" />
+    <ClInclude Include="compat\hkbAttachmentModifier_1.h" />
+    <ClInclude Include="compat\hkbAttachmentSetup_1.h" />
+    <ClInclude Include="compat\hkbAttributeModifier_0.h" />
+    <ClInclude Include="compat\hkbAttributeModifierAssignment_0.h" />
+    <ClInclude Include="compat\hkbAuxiliaryNodeInfo_1.h" />
+    <ClInclude Include="compat\hkbBehaviorEventsInfo_1.h" />
+    <ClInclude Include="compat\hkbBehaviorGraph_1.h" />
+    <ClInclude Include="compat\hkbBehaviorGraphData_2.h" />
+    <ClInclude Include="compat\hkbBehaviorGraphInternalState_0.h" />
+    <ClInclude Include="compat\hkbBehaviorGraphInternalStateInfo_1.h" />
+    <ClInclude Include="compat\hkbBehaviorGraphStringData_1.h" />
+    <ClInclude Include="compat\hkbBehaviorInfo_1.h" />
+    <ClInclude Include="compat\hkbBehaviorInfoIdToNamePair_0.h" />
+    <ClInclude Include="compat\hkbBehaviorReferenceGenerator_0.h" />
+    <ClInclude Include="compat\hkbBindable_0.h" />
+    <ClInclude Include="compat\hkbBlendCurveUtils_0.h" />
+    <ClInclude Include="compat\hkbBlenderGenerator_1.h" />
+    <ClInclude Include="compat\hkbBlenderGeneratorChild_2.h" />
+    <ClInclude Include="compat\hkbBlenderGeneratorChildInternalState_0.h" />
+    <ClInclude Include="compat\hkbBlenderGeneratorInternalState_0.h" />
+    <ClInclude Include="compat\hkbBlendingTransitionEffect_1.h" />
+    <ClInclude Include="compat\hkbBlendingTransitionEffectInternalState_0.h" />
+    <ClInclude Include="compat\hkbBoneIndexArray_0.h" />
+    <ClInclude Include="compat\hkbBoneWeightArray_0.h" />
+    <ClInclude Include="compat\hkbBoolVariableSequencedData_0.h" />
+    <ClInclude Include="compat\hkbBoolVariableSequencedDataSample_0.h" />
+    <ClInclude Include="compat\hkbCameraShakeEventPayload_0.h" />
+    <ClInclude Include="compat\hkbCharacter_2.h" />
+    <ClInclude Include="compat\hkbCharacterAddedInfo_0.h" />
+    <ClInclude Include="compat\hkbCharacterControlCommand_1.h" />
+    <ClInclude Include="compat\hkbCharacterControllerControlData_0.h" />
+    <ClInclude Include="compat\hkbCharacterControllerModifier_0.h" />
+    <ClInclude Include="compat\hkbCharacterControllerModifierInternalState_0.h" />
+    <ClInclude Include="compat\hkbCharacterData_7.h" />
+    <ClInclude Include="compat\hkbCharacterDataCharacterControllerInfo_0.h" />
+    <ClInclude Include="compat\hkbCharacterInfo_2.h" />
+    <ClInclude Include="compat\hkbCharacterSetup_2.h" />
+    <ClInclude Include="compat\hkbCharacterSkinInfo_2.h" />
+    <ClInclude Include="compat\hkbCharacterSteppedInfo_2.h" />
+    <ClInclude Include="compat\hkbCharacterStringData_5.h" />
+    <ClInclude Include="compat\hkbClientCharacterState_1.h" />
+    <ClInclude Include="compat\hkbClipGenerator_2.h" />
+    <ClInclude Include="compat\hkbClipGeneratorEcho_0.h" />
+    <ClInclude Include="compat\hkbClipGeneratorInternalState_0.h" />
+    <ClInclude Include="compat\hkbClipTrigger_1.h" />
+    <ClInclude Include="compat\hkbClipTriggerArray_0.h" />
+    <ClInclude Include="compat\hkbCombineTransformsModifier_0.h" />
+    <ClInclude Include="compat\hkbCombineTransformsModifierInternalState_0.h" />
+    <ClInclude Include="compat\hkbCompiledExpressionSet_1.h" />
+    <ClInclude Include="compat\hkbCompiledExpressionSetToken_0.h" />
+    <ClInclude Include="compat\hkbComputeDirectionModifier_0.h" />
+    <ClInclude Include="compat\hkbComputeDirectionModifierInternalState_0.h" />
+    <ClInclude Include="compat\hkbComputeRotationFromAxisAngleModifier_0.h" />
+    <ClInclude Include="compat\hkbComputeRotationFromAxisAngleModifierInternalState_0.h" />
+    <ClInclude Include="compat\hkbComputeRotationToTargetModifier_0.h" />
+    <ClInclude Include="compat\hkbComputeRotationToTargetModifierInternalState_0.h" />
+    <ClInclude Include="compat\hkbCondition_0.h" />
+    <ClInclude Include="compat\hkbContext_1.h" />
+    <ClInclude Include="compat\hkbDampingModifier_1.h" />
+    <ClInclude Include="compat\hkbDampingModifierInternalState_0.h" />
+    <ClInclude Include="compat\hkbDefaultMessageLog_0.h" />
+    <ClInclude Include="compat\hkbDelayedModifier_0.h" />
+    <ClInclude Include="compat\hkbDelayedModifierInternalState_0.h" />
+    <ClInclude Include="compat\hkbDetectCloseToGroundModifier_2.h" />
+    <ClInclude Include="compat\hkbDetectCloseToGroundModifierInternalState_0.h" />
+    <ClInclude Include="compat\hkbEvaluateExpressionModifier_1.h" />
+    <ClInclude Include="compat\hkbEvaluateExpressionModifierInternalExpressionData_0.h" />
+    <ClInclude Include="compat\hkbEvaluateExpressionModifierInternalState_0.h" />
+    <ClInclude Include="compat\hkbEvaluateHandleModifier_2.h" />
+    <ClInclude Include="compat\hkbEvent_1.h" />
+    <ClInclude Include="compat\hkbEventBase_0.h" />
+    <ClInclude Include="compat\hkbEventDrivenModifier_0.h" />
+    <ClInclude Include="compat\hkbEventDrivenModifierInternalState_0.h" />
+    <ClInclude Include="compat\hkbEventInfo_0.h" />
+    <ClInclude Include="compat\hkbEventPayload_0.h" />
+    <ClInclude Include="compat\hkbEventPayloadList_0.h" />
+    <ClInclude Include="compat\hkbEventProperty_1.h" />
+    <ClInclude Include="compat\hkbEventRaisedInfo_2.h" />
+    <ClInclude Include="compat\hkbEventRangeData_0.h" />
+    <ClInclude Include="compat\hkbEventRangeDataArray_0.h" />
+    <ClInclude Include="compat\hkbEventSequencedData_0.h" />
+    <ClInclude Include="compat\hkbEventSequencedDataSequencedEvent_0.h" />
+    <ClInclude Include="compat\hkbEventsFromRangeModifier_0.h" />
+    <ClInclude Include="compat\hkbEventsFromRangeModifierInternalState_0.h" />
+    <ClInclude Include="compat\hkbExpressionCondition_1.h" />
+    <ClInclude Include="compat\hkbExpressionData_0.h" />
+    <ClInclude Include="compat\hkbExpressionDataArray_0.h" />
+    <ClInclude Include="compat\hkbExtractRagdollPoseModifier_1.h" />
+    <ClInclude Include="compat\hkbFootIkControlData_0.h" />
+    <ClInclude Include="compat\hkbFootIkControlsModifier_1.h" />
+    <ClInclude Include="compat\hkbFootIkControlsModifierLeg_0.h" />
+    <ClInclude Include="compat\hkbFootIkDriverInfo_0.h" />
+    <ClInclude Include="compat\hkbFootIkDriverInfoLeg_0.h" />
+    <ClInclude Include="compat\hkbFootIkGains_0.h" />
+    <ClInclude Include="compat\hkbFootIkModifier_3.h" />
+    <ClInclude Include="compat\hkbFootIkModifierInternalLegData_1.h" />
+    <ClInclude Include="compat\hkbFootIkModifierLeg_2.h" />
+    <ClInclude Include="compat\hkbGenerator_0.h" />
+    <ClInclude Include="compat\hkbGeneratorOutputListener_0.h" />
+    <ClInclude Include="compat\hkbGeneratorSyncInfo_0.h" />
+    <ClInclude Include="compat\hkbGeneratorSyncInfoSyncPoint_0.h" />
+    <ClInclude Include="compat\hkbGeneratorTransitionEffect_1.h" />
+    <ClInclude Include="compat\hkbGeneratorTransitionEffectInternalState_0.h" />
+    <ClInclude Include="compat\hkbGetHandleOnBoneModifier_0.h" />
+    <ClInclude Include="compat\hkbGetUpModifier_2.h" />
+    <ClInclude Include="compat\hkbGetUpModifierInternalState_0.h" />
+    <ClInclude Include="compat\hkbGetWorldFromModelModifier_0.h" />
+    <ClInclude Include="compat\hkbGetWorldFromModelModifierInternalState_0.h" />
+    <ClInclude Include="compat\hkbHandIkControlData_2.h" />
+    <ClInclude Include="compat\hkbHandIkControlsModifier_0.h" />
+    <ClInclude Include="compat\hkbHandIkControlsModifierHand_0.h" />
+    <ClInclude Include="compat\hkbHandIkDriverInfo_0.h" />
+    <ClInclude Include="compat\hkbHandIkDriverInfoHand_1.h" />
+    <ClInclude Include="compat\hkbHandIkModifier_0.h" />
+    <ClInclude Include="compat\hkbHandIkModifierHand_3.h" />
+    <ClInclude Include="compat\hkbHandle_1.h" />
+    <ClInclude Include="compat\hkbIntEventPayload_0.h" />
+    <ClInclude Include="compat\hkbIntVariableSequencedData_0.h" />
+    <ClInclude Include="compat\hkbIntVariableSequencedDataSample_0.h" />
+    <ClInclude Include="compat\hkbKeyframeBonesModifier_3.h" />
+    <ClInclude Include="compat\hkbKeyframeBonesModifierKeyframeInfo_0.h" />
+    <ClInclude Include="compat\hkbLinkedSymbolInfo_0.h" />
+    <ClInclude Include="compat\hkbLookAtModifier_3.h" />
+    <ClInclude Include="compat\hkbLookAtModifierInternalState_0.h" />
+    <ClInclude Include="compat\hkbManualSelectorGenerator_0.h" />
+    <ClInclude Include="compat\hkbManualSelectorGeneratorInternalState_0.h" />
+    <ClInclude Include="compat\hkbMessageLog_0.h" />
+    <ClInclude Include="compat\hkbMirroredSkeletonInfo_0.h" />
+    <ClInclude Include="compat\hkbMirrorModifier_0.h" />
+    <ClInclude Include="compat\hkbModifier_0.h" />
+    <ClInclude Include="compat\hkbModifierGenerator_0.h" />
+    <ClInclude Include="compat\hkbModifierList_0.h" />
+    <ClInclude Include="compat\hkbModifierWrapper_0.h" />
+    <ClInclude Include="compat\hkbMoveCharacterModifier_0.h" />
+    <ClInclude Include="compat\hkbMoveCharacterModifierInternalState_0.h" />
+    <ClInclude Include="compat\hkbNamedEventPayload_0.h" />
+    <ClInclude Include="compat\hkbNamedIntEventPayload_0.h" />
+    <ClInclude Include="compat\hkbNamedRealEventPayload_0.h" />
+    <ClInclude Include="compat\hkbNamedStringEventPayload_0.h" />
+    <ClInclude Include="compat\hkbNode_1.h" />
+    <ClInclude Include="compat\hkbNodeInternalStateInfo_0.h" />
+    <ClInclude Include="compat\hkbParticleSystemEventPayload_0.h" />
+    <ClInclude Include="compat\hkbPoseMatchingGenerator_2.h" />
+    <ClInclude Include="compat\hkbPoseMatchingGeneratorInternalState_0.h" />
+    <ClInclude Include="compat\hkbPoweredRagdollControlData_3.h" />
+    <ClInclude Include="compat\hkbPoweredRagdollControlsModifier_5.h" />
+    <ClInclude Include="compat\hkbProjectData_2.h" />
+    <ClInclude Include="compat\hkbProjectStringData_1.h" />
+    <ClInclude Include="compat\hkbProxyModifier_1.h" />
+    <ClInclude Include="compat\hkbProxyModifierProxyInfo_0.h" />
+    <ClInclude Include="compat\hkbRaiseEventCommand_0.h" />
+    <ClInclude Include="compat\hkbRealEventPayload_0.h" />
+    <ClInclude Include="compat\hkbRealVariableSequencedData_0.h" />
+    <ClInclude Include="compat\hkbRealVariableSequencedDataSample_0.h" />
+    <ClInclude Include="compat\hkbReferencePoseGenerator_0.h" />
+    <ClInclude Include="compat\hkbRegisteredGenerator_1.h" />
+    <ClInclude Include="compat\hkbRigidBodyRagdollControlData_1.h" />
+    <ClInclude Include="compat\hkbRigidBodyRagdollControlsModifier_3.h" />
+    <ClInclude Include="compat\hkbRoleAttribute_0.h" />
+    <ClInclude Include="compat\hkbRotateCharacterModifier_1.h" />
+    <ClInclude Include="compat\hkbRotateCharacterModifierInternalState_0.h" />
+    <ClInclude Include="compat\hkbSenseHandleModifier_2.h" />
+    <ClInclude Include="compat\hkbSenseHandleModifierRange_0.h" />
+    <ClInclude Include="compat\hkbSequence_0.h" />
+    <ClInclude Include="compat\hkbSequencedData_0.h" />
+    <ClInclude Include="compat\hkbSequenceInternalState_0.h" />
+    <ClInclude Include="compat\hkbSequenceStringData_0.h" />
+    <ClInclude Include="compat\hkbSetBehaviorCommand_1.h" />
+    <ClInclude Include="compat\hkbSetLocalTimeOfClipGeneratorCommand_0.h" />
+    <ClInclude Include="compat\hkbSetNodePropertyCommand_1.h" />
+    <ClInclude Include="compat\hkbSetWordVariableCommand_0.h" />
+    <ClInclude Include="compat\hkbSetWorldFromModelModifier_0.h" />
+    <ClInclude Include="compat\hkbSimulationControlCommand_0.h" />
+    <ClInclude Include="compat\hkbSimulationStateInfo_0.h" />
+    <ClInclude Include="compat\hkbStateChooser_0.h" />
+    <ClInclude Include="compat\hkbStateListener_0.h" />
+    <ClInclude Include="compat\hkbStateMachine_4.h" />
+    <ClInclude Include="compat\hkbStateMachineActiveTransitionInfo_1.h" />
+    <ClInclude Include="compat\hkbStateMachineDelayedTransitionInfo_1.h" />
+    <ClInclude Include="compat\hkbStateMachineEventPropertyArray_0.h" />
+    <ClInclude Include="compat\hkbStateMachineInternalState_0.h" />
+    <ClInclude Include="compat\hkbStateMachineNestedStateMachineData_0.h" />
+    <ClInclude Include="compat\hkbStateMachineProspectiveTransitionInfo_2.h" />
+    <ClInclude Include="compat\hkbStateMachineStateInfo_4.h" />
+    <ClInclude Include="compat\hkbStateMachineTimeInterval_0.h" />
+    <ClInclude Include="compat\hkbStateMachineTransitionInfo_1.h" />
+    <ClInclude Include="compat\hkbStateMachineTransitionInfoArray_0.h" />
+    <ClInclude Include="compat\hkbStateMachineTransitionInfoReference_1.h" />
+    <ClInclude Include="compat\hkbStringCondition_0.h" />
+    <ClInclude Include="compat\hkbStringEventPayload_0.h" />
+    <ClInclude Include="compat\hkbTestStateChooser_0.h" />
+    <ClInclude Include="compat\hkbTimerModifier_1.h" />
+    <ClInclude Include="compat\hkbTimerModifierInternalState_0.h" />
+    <ClInclude Include="compat\hkbTransformVectorModifier_0.h" />
+    <ClInclude Include="compat\hkbTransformVectorModifierInternalState_0.h" />
+    <ClInclude Include="compat\hkbTransitionEffect_0.h" />
+    <ClInclude Include="compat\hkbTwistModifier_1.h" />
+    <ClInclude Include="compat\hkbVariableBindingSet_2.h" />
+    <ClInclude Include="compat\hkbVariableBindingSetBinding_1.h" />
+    <ClInclude Include="compat\hkbVariableInfo_1.h" />
+    <ClInclude Include="compat\hkbVariableValue_0.h" />
+    <ClInclude Include="compat\hkbVariableValueSet_0.h" />
+    <ClInclude Include="compat\hkbWorldEnums_0.h" />
+    <ClInclude Include="compat\hkbWorldFromModelModeData_0.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Core\hkxcmd.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="compat\hkxverify.inl" />
+    <None Include="LICENSE.TXT" />
+    <None Include="README.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="hkxcmd_VC90.vcxproj">
+      <Project>{3976526d-2906-443b-b716-95e3915a7cbe}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
